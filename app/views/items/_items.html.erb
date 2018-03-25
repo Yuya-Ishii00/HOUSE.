@@ -9,7 +9,7 @@
           <%= link_to item.user.name, user_path(item.user) %> <span class="text-muted">posted at <%= item.created_at %></span>
         </div>
         <div>
-          <p><%= item.comment %></p>
+          <p><%= item.category.name %>：<%= item.comment %></p>
         </div>
         <div>
           <% if current_user == item.user %>

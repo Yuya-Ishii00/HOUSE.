@@ -7,13 +7,4 @@ class User < ApplicationRecord
   has_secure_password
   
   has_many :items
-  
 end
-
-  def check_image
-    if !['.jpg', '.png', '.gif'].include?(File.extname(name).downcase)
-        errors.add(:image, "JPG, PNG, GIFのみアップロードできます。")
-    elsif file.size > 1.megabyte
-        errors.add(:image, "1MBまでアップロードできます")
-    end
-  end

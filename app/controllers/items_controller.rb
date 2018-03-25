@@ -23,7 +23,7 @@ class ItemsController < ApplicationController
   private
 
   def item_params
-    params.require(:item).permit(:comment)
+    params.require(:item).permit(:comment, :category_id)
   end
   
   def correct_user

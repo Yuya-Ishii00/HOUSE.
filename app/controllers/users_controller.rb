@@ -7,6 +7,11 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    if params[:category_id]
+      @items = current_user.items.where(category_id: params[:category_id]).page(params[:page])
+    else
+      @items = current_user.items.page(params[:page])
+    end
   end
 
   def new
