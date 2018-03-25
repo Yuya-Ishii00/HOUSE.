@@ -13,6 +13,21 @@ class ItemsController < ApplicationController
       render 'toppages/index'
     end
   end
+  
+  def edit
+    @item = Item.find(params[:id])
+  end
+  
+  def update
+    @item = Item.find(params[:id])
+    if @item.update(item_params)
+      flash[:success] = 'アイテムを編集しました'
+      redirect_to root_url
+    else
+      flash.now[:danger] = 'アイテムの編集に失敗しました。'
+      render 'edit'
+    end
+  end
 
   def destroy
     @item.destroy

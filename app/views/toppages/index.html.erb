@@ -1,6 +1,7 @@
 <% if logged_in? %>
   <div class="row">
     <aside class="col-md-3">
+      <h3>持っている服などのアイテムを登録しましょう。</h3>
       <%= form_for(@item) do |f| %>
         <%= render 'layouts/error_messages', model: f.object %>
         <div class="form-group">
@@ -9,7 +10,7 @@
         <div class="form-group">
           <%= f.text_field :comment, class: 'form-control', rows: 5 %>
         </div>
-        <%= f.submit 'GO', class: 'btn btn-primary btn-block' %>
+        <%= f.submit 'アイテムを登録する。', class: 'btn btn-primary btn-block' %>
       <% end %>
     </aside>
     <div class="col-xs-8">
